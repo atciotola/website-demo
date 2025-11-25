@@ -106,6 +106,115 @@ Just plain HTML, and whatever your brain does with it.</p>
   <p>If you came here expecting a polished portfolio, a cinematic introduction, or a perfectly branded version of me, <em>you’re in the wrong fucking place. </em> 
    This page refuses to perform for you, it forces you to engage or leave.</p>
 
+    <hr>
+  
+    <h3>You. Are. Overestimating. Appearances.</h3>
+  <p>Most people see two photos, a bunch of cool outfits and a clean LinkedIn profile and immediately build a fantasy character: 
+    the “cool guy”, the “put-together kid”, the “half-genius”, the “Prince Charming with a skincare routine”.</p>
+  <p>Accuracy? 17.38% at best. </p>
+  <p>Because remember, a surface isn’t a person and a vibe isn’t a personality. </p>
+
+
+  <h3>Why this looks like this</h3>
+  <p>This page is the anti-illusion. It’s intentionally plain so your brain has to do the work: pay attention, think, and try to fill the gaps.  
+     If you can’t engage with text without visual fireworks, well, consider taking a break from Instagram and TikTok. </p>
+  <p>If you want to understand someone, you need effort, attention and real conversations,
+    not three filtered photos and a quote stolen from a dead philosopher you never read.</p>
+
+   <hr>
+  
+<h3>Who I am (high level)</h3>
+
+<div id="typebox" style="
+  font-family: inherit;
+  font-size: 17px;
+  color: #454545;
+  white-space: pre-wrap;
+  min-height: 90px;
+">
+</div>
+
+<style>
+  .glitch {
+    position: relative;
+    display: inline-block;
+    animation: glitch 220ms linear 0s 6;
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0, 0);
+      text-shadow: 0 0 0 #f00, 0 0 0 #0ff;
+    }
+    20% {
+      transform: translate(-1px, 1px);
+      text-shadow: -2px 0 #f00, 2px 0 #0ff;
+    }
+    40% {
+      transform: translate(1px, -1px);
+      text-shadow: 2px 0 #f00, -2px 0 #0ff;
+    }
+    60% {
+      transform: translate(-1px, 0);
+      text-shadow: -2px 0 #f00, 2px 0 #0ff;
+    }
+    80% {
+      transform: translate(1px, 1px);
+      text-shadow: 2px 0 #f00, -2px 0 #0ff;
+    }
+    100% {
+      transform: translate(0, 0);
+      text-shadow: 0 0 0 #f00, 0 0 0 #0ff;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  const lines = [
+    "Name: Alessio Tito Ciotola...",
+    "Loading...",
+    "Loading...",
+    "Error: profile exceeds public bandwidth."
+  ];
+
+  const box = document.getElementById("typebox");
+  let line = 0;
+  let char = 0;
+
+  function type() {
+    if (line < lines.length) {
+      if (char < lines[line].length) {
+        box.textContent += lines[line][char];
+        char++;
+        setTimeout(type, 18); // velocità di typing
+      } else {
+        box.textContent += "\n";
+        line++;
+        char = 0;
+        setTimeout(type, 180); // pausa fine riga
+      }
+    } else {
+      // dopo l'“errore”, glitch + messaggio finale
+      setTimeout(() => {
+        const finalMsg = "Meet me offline.";
+        box.style.color = "#777";
+        box.textContent = finalMsg;
+        box.classList.add("glitch");
+
+        setTimeout(() => {
+          box.classList.remove("glitch");
+          box.style.color = "#454545";
+          box.textContent = finalMsg;
+        }, 1400);
+      }, 300);
+    }
+  }
+
+  type();
+})();
+</script>
+
 </section>
 
 <!-- NOTES -->
