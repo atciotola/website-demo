@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Alessio Tito Ciotola — personal placeholder." />
   <title>Alessio Tito Ciotola</title>
 
   <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --muted: rgba(255,255,255,0.55);
+      --subtle: rgba(255,255,255,0.35);
+    }
+
     * { box-sizing: border-box; }
 
     html, body {
@@ -19,14 +27,15 @@
     }
 
     body {
-      background: #000;
-      color: #fff;
+      background: var(--bg);
+      color: var(--fg);
       font-family: "Inter", -apple-system, BlinkMacSystemFont,
                    "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
       letter-spacing: -0.01em;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     main {
@@ -34,34 +43,56 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6vw;
+      padding: clamp(32px, 6vw, 96px);
     }
 
     .container {
-      max-width: 72ch;
       width: 100%;
+      max-width: 68ch;
+    }
+
+    header {
+      margin-bottom: clamp(40px, 8vh, 96px);
     }
 
     .name {
-      margin-bottom: 48px;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      opacity: 0.6;
+      color: var(--muted);
     }
 
     h1 {
-      margin: 0 0 16px 0;
-      font-size: clamp(22px, 3vw, 34px);
+      margin: 0 0 20px 0;
+      font-size: clamp(22px, 3vw, 32px);
       font-weight: 500;
+      letter-spacing: -0.015em;
     }
 
     p {
       margin: 0;
-      font-size: clamp(15px, 1.4vw, 18px);
-      font-weight: 400;
       max-width: 60ch;
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: clamp(64px, 14vh, 180px);
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    footer .sep {
+      opacity: 0.3;
     }
   </style>
 </head>
@@ -69,16 +100,21 @@
 <body>
   <main>
     <section class="container">
-      <div class="name">Alessio Tito Ciotola</div>
+      <header>
+        <div class="name">Alessio Tito Ciotola</div>
+      </header>
 
       <h1>If this website never updates</h1>
       <p>
         That means life is interesting enough to live without narrating it here.
         Which is the most accurate update I can give you.
       </p>
+
+      <footer>
+        <span>© 2025 Alessio Tito Ciotola</span>
+        <span class="sep">—</span>
+        <span>All rights reserved</span>
+      </footer>
     </section>
   </main>
 </body>
-</html>
-
-
